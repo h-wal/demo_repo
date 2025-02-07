@@ -1,0 +1,16 @@
+<body>
+    Hey Welcome to good thoughts
+    <div id="posts">
+    </div>
+    <script>
+        async function getposts(){
+            const posts = await fetch("http://app.100xdevs.com/courses/14/466/467",{
+                method: "GET"
+            });
+            const data = await posts.json();
+            console.log(data);
+            document.getElementById("posts").innerHTML = data.body;
+        }
+        getposts()
+    </script>
+</body>
