@@ -1,0 +1,16 @@
+<body>
+    Linkedin Page
+    I will update the page using a backend request call using axios once you click this button -
+    <button onclick="getquote()">
+        click me 
+    </button>
+    <div id="quote"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function getquote(){
+            const quote = await axios.get("https://jsonplaceholder.typicode.com/posts/8")
+            console.log(quote);
+            document.getElementById("quote").innerHTML += quote.data.body;
+        }
+    </script>
+</body>
